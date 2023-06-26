@@ -1,0 +1,30 @@
+#!/usr/bin/python3
+#CAESAR CIPHER FOR ENCRYPTION AND DECRYPTION IN CYBERSECURITY
+def encrypt_char(char, key):
+    return chr(ord('A') + (ord(char) - ord('A') + key) % 26)
+    def encrypt_msg(msg, key):
+     msg = msg.upper()
+    cipher = ''
+    for char in msg:
+        if char not in ' ,.':
+            cipher += encrypt_char(char, key)
+        else:
+            cipher += char
+    return cipher
+   
+    encrypt_msg("Hello I am Nilesh Patil", 3)
+    
+def decrypt_char(char, key):
+   return chr(ord('A') + (ord(char) - ord('A') + 26 - key) % 26)
+
+def decrypt_msg(cipher, key):
+    cipher = cipher.upper()
+    msg = ''
+    for char in cipher:
+        if char not in ' ,.':
+            msg += decrypt_char(char, key)
+        else:
+            msg += char
+    return msg
+print('The decrypted message using Caesar Cipher implementation is:')
+decrypt_msg('KHOOR L DP WDQBD SUDVDQQD.', 3)
