@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 #CAESAR CIPHER FOR ENCRYPTION AND DECRYPTION IN CYBERSECURITY
 def encrypt_char(char, key):
     return chr(ord('A') + (ord(char) - ord('A') + key) % 26)
